@@ -1,0 +1,12 @@
+languageCode = "en-us"
+title = "My New Hugo Site"
+baseURL = "http://example.org/"
+ignoreFiles = [ "\\.foo$", "\\.boo$" ]
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[params]
+  description = "Tesla's Awesome Hugo Site"
+  author = "Nikola Tesla"
