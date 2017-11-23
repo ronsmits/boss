@@ -38,6 +38,7 @@ class ThemeController : Controller() {
         val doc = Jsoup.connect(ThemeBase).header("User-Agent", UserAgent).get()
 
         doc.select(".thumbnail").forEach {
+            println(it)
             val link = it.select("a")
             val homepageUrl = link.attr("href")
             val path = homepageUrl.substringAfter(ThemeBase).substringBefore("/")
@@ -81,6 +82,7 @@ class ThemeController : Controller() {
     }
 
     fun getThumbnail(theme: Theme): Image {
+        println(theme.thumbnail)
         if (theme.thumbnail != null) {
             return URI.create(theme.thumbnail).toURL().openConnection().let {
                 it.addRequestProperty("User-Agent", UserAgent)
